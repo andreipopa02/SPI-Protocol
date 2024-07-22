@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1721633662" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tb_spi_master.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1721641793" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tb_spi_master.dcp">
   <File Type="PA-TCL" Name="SPI_master.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="SPI_master_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="SPI_master_reports.tcl"/>
@@ -11,14 +11,14 @@
   <File Type="VDS-TIMING-PB" Name="SPI_master_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../SPI V2/SPI V2.srcs/sources_1/new/modules.v">
+    <File Path="$PSRCDIR/sources_1/new/modules.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../SPI V2/SPI V2.srcs/sources_1/new/SPI_Master.v">
+    <File Path="$PSRCDIR/sources_1/new/SPI_Master.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

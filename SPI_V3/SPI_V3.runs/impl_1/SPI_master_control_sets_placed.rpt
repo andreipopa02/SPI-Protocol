@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Mon Jul 22 10:36:49 2024
+| Date         : Mon Jul 22 12:52:14 2024
 | Host         : DESKTOP-TO72V87 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file SPI_master_control_sets_placed.rpt
 | Design       : SPI_master
@@ -58,7 +58,7 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              14 |            4 |
+| No           | No                    | No                     |              14 |            5 |
 | No           | No                    | Yes                    |               2 |            1 |
 | No           | Yes                   | No                     |              27 |            7 |
 | Yes          | No                    | No                     |               8 |            2 |
@@ -73,9 +73,9 @@ Table of Contents
 +-----------------------+-------------------+-------------------------------------+------------------+----------------+--------------+
 |      Clock Signal     |   Enable Signal   |           Set/Reset Signal          | Slice Load Count | Bel Load Count | Bels / Slice |
 +-----------------------+-------------------+-------------------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG        |                   |                                     |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG        |                   |                                     |                2 |              2 |         1.00 |
 |  clk_IBUF_BUFG        |                   | reset_IBUF                          |                1 |              2 |         2.00 |
-|  divider_instance/CLK | fsm_instance/D[0] |                                     |                2 |              8 |         4.00 |
+|  divider_instance/CLK | fsm_instance/E[0] |                                     |                2 |              8 |         4.00 |
 |  divider_instance/CLK |                   |                                     |                3 |             12 |         4.00 |
 |  clk_IBUF_BUFG        |                   | divider_instance/counter[0]_i_1_n_0 |                7 |             27 |         3.86 |
 +-----------------------+-------------------+-------------------------------------+------------------+----------------+--------------+

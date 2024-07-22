@@ -1,7 +1,6 @@
 /*
 `timescale 1ns / 1ps
 
-
 module tb_spi_master;
     reg clk;
     reg reset;
@@ -13,7 +12,7 @@ module tb_spi_master;
     wire mosi;
     wire cs;
 
-    SPI_master uut (
+    SPI_master master (
         .clk(clk),
         .reset(reset),
         .ready_state(ready_state),
@@ -29,20 +28,40 @@ module tb_spi_master;
         clk = 0;
         reset = 1;
         ready_state = 0;
-       
-        miso = 0;
         
-        #100 reset = 0;
-        #20 ready_state = 1;
-        #20 switch_data = 8'h55;
+        miso = 1;
+        
+        #10 reset = 0; ready_state = 1;
+        #10 switch_data = 8'h55;
+        
+        #10 miso = 0;
+        #10 miso = 1;
+        #10 miso = 0;
+        #10 miso = 1;
+        #10 miso = 0;
+        #10 miso = 1;
+        #10 miso = 0;
+        
+        
+        #10 reset = 0; ready_state = 0;
+        #10 reset = 1; ready_state = 1;
+        #10 switch_data = 8'hA3;
+        #10 miso = 0;
+        #10 miso = 1;
+        #10 miso = 0;
+        #10 miso = 1;
+        #10 miso = 0;
+        #10 miso = 1;
+        #10 miso = 0;
+        #10 miso = 1;
+        
     end
 
     always #5 clk = ~clk;
 
     initial begin
-        $monitor("Time = %0t, sclk = %b, mosi = %b, cs = %b", $time, sclk, mosi, cs);
-        #1000 $finish;
+        $monitor("Time = %0t, switch_data = %b, data_out = %b, miso = %b, mosi = b%", $time, switch_data, data_out, miso, mosi);
+        #2000 $finish;
     end
 endmodule
-
 */

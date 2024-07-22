@@ -5,8 +5,8 @@ module SPI_master(
     input wire clk,
     input wire reset,
     input wire ready_state,
-    input wire [7:0] switch_data,
-    output wire [7:0] data_out,
+    input wire [7:0] switch_data, ////
+    output wire [7:0] data_out, /////
     input  wire miso,
     output wire sclk,
     output wire mosi,
@@ -16,7 +16,9 @@ module SPI_master(
     wire [2:0] bit_cnt;
     wire [7:0] data_in;
     wire shift_in, pl;
-
+    
+    
+    
     freq_divider divider_instance (.clk(clk), .sclk(sclk));
     fsm fsm_instance (
         .clk(clk), 
@@ -41,7 +43,7 @@ module SPI_master(
     );
 
     assign mosi = data_out[7]; // MSB first for MOSI
-    assign cs = ~ready_state; // Chip select active low
+    assign cs = ~ready_state;  // Chip select active low
    
 endmodule
 

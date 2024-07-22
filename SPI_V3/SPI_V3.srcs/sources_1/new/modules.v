@@ -3,14 +3,13 @@ module freq_divider(
     input clk,
     output reg sclk
 );
-    
     reg [27:0] counter = 28'd0;
     parameter DIVISOR = 28'd100_000_000; // Assuming a 100 MHz clock for a 1Hz output
     //parameter DIVISOR = 28'd2; 
     
     always @(posedge clk) begin
         counter <= counter + 28'd1;
-        if (counter >= (DIVISOR-1))
+        if (counter >= (DIVISOR - 1))
             counter <= 28'd0;
         sclk <= (counter < DIVISOR/2) ? 1'b1 : 1'b0;
     end
@@ -23,6 +22,7 @@ module counter(
     input clk,
     output reg [2:0] bit_cnt
 );
+    
     always @(posedge clk) begin
         if (enable) begin
             if (bit_cnt == 3'b111)
@@ -31,6 +31,14 @@ module counter(
                 bit_cnt <= bit_cnt + 1;
         end
     end
+    /*
+    always @(posedge clk) begin
+        if (enable)
+            bit_cnt <= bit_cnt + 1;
+        //else//
+            //bit_cnt <= 0;
+    end
+    */
 endmodule
 
 
@@ -44,14 +52,20 @@ module shift_register(
     output reg [7:0] data_out
 );
     reg [7:0] shift_reg;
-
+     
+    initial begin
+        shift_reg = 8'b0;
+    end
+    
     always @(posedge clk) begin
-        if (pl) begin
-            shift_reg <= switch_data;
-        end else if (enable_shift) begin
-            shift_reg <= {shift_reg[6:0], shift_in};
+        if (enable_shift) begin
+            if (pl) begin
+                shift_reg <= switch_data;          
+            end else begin
+                shift_reg <= {shift_reg[6:0], shift_in}; 
+            end
         end
-        data_out <= shift_reg;
+    data_out <= shift_reg;
     end
 endmodule
 
@@ -100,6 +114,10 @@ module fsm(
         
         case (state)
             IDLE: begin
+                enable_cnt = 0;
+                enable_shift = 0;
+                data_out = 8'b0;
+                pl = 0;
                 if (ready_state)
                     next_state = START;
                 else
@@ -108,13 +126,13 @@ module fsm(
             START: begin
                 pl = 1;  
                 enable_cnt = 1;
-                data_out = switch_data; // Use switch data for data_out
+                data_out = switch_data; /////
                 next_state = TRANSFER;
             end
             TRANSFER: begin
                 pl = 0;
                 enable_shift = 1;
-                if (bit_cnt == 3'b111) // Check if counter reaches its maximum value (7)
+                if (bit_cnt == 3'b111) 
                     next_state = DONE;
                 else
                     next_state = TRANSFER;

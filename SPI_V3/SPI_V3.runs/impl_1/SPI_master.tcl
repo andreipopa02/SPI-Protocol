@@ -106,6 +106,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 3
+  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 6  }
   open_checkpoint SPI_master_routed.dcp
   set_property webtalk.parent_dir D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.cache/wt [current_project]
