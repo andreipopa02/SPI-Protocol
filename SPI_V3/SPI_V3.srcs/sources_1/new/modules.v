@@ -97,6 +97,7 @@ module fsm(
               
     reg [1:0] state;
     reg [1:0] next_state;
+    reg ready_fsm;
 
     always @(posedge clk or posedge reset) begin
         if (reset) 
@@ -111,6 +112,7 @@ module fsm(
         enable_shift = 0;
         data_out = 8'b0;
         pl = 0;
+        ready_fsm = ready_state;
         
         case (state)
             IDLE: begin
@@ -118,7 +120,8 @@ module fsm(
                 enable_shift = 0;
                 data_out = 8'b0;
                 pl = 0;
-                if (ready_state)
+               // ready_fsm = ready_state;
+                if (ready_fsm)
                     next_state = START;
                 else
                     next_state = IDLE;
@@ -141,6 +144,7 @@ module fsm(
                 pl = 0;
                 enable_cnt = 0;
                 enable_shift = 0;
+                ready_fsm = 0;
                 next_state = IDLE;
             end
             default: next_state = IDLE;

@@ -41,8 +41,8 @@ module SPI_master(
         .shift_in(shift_in), 
         .data_out(data_out)
     );
-
-    assign mosi = data_out[7]; // MSB first for MOSI
+    buffer tx_buff_instance (.data_in(data_out[7]), .data_out(mosi));
+    
     assign cs = ~ready_state;  // Chip select active low
    
 endmodule
