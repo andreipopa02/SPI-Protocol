@@ -8,27 +8,27 @@ module freq_divider(
     //parameter DIVISOR = 28'd2; 
     
     always @(posedge clk) begin           //at always change of clock signal
-        counter <= counter + 28'd1;       //
-        if (counter >= (DIVISOR - 1))
-            counter <= 28'd0;
-        sclk <= (counter < DIVISOR/2) ? 1'b1 : 1'b0;
+        counter <= counter + 28'd1;       //increments the counter
+        if (counter >= (DIVISOR - 1))     //greater than constant value DIVISOR
+            counter <= 28'd0;             //reset counter to 0
+        sclk <= (counter < DIVISOR/2) ? 1'b1 : 1'b0; //set output signal
     end
 endmodule
 
 
 // Counter Module
 module counter(
-    input enable,
-    input clk,
-    output reg [2:0] bit_cnt
+    input enable,                          //enabled the counting
+    input clk,                             //clock signal
+    output reg [2:0] bit_cnt               //3-bit register
 );
     
-    always @(posedge clk) begin
-        if (enable) begin
-            if (bit_cnt == 3'b111)
-                bit_cnt <= 0;
+    always @(posedge clk) begin            //at always change of clock signal
+        if (enable) begin                  //if enable is high
+            if (bit_cnt == 3'b111)         //checks if heas reached the max value, 7
+                bit_cnt <= 0;              //reset to 0 
             else
-                bit_cnt <= bit_cnt + 1;
+                bit_cnt <= bit_cnt + 1;    //otherwise  increments
         end
     end
 endmodule
@@ -36,8 +36,8 @@ endmodule
 
 // Shift Register Module
 module shift_register(
-    input clk,
-    input enable_shift,
+    input clk,                              //clock signal
+    input enable_shift,                     //
     input shift_in,
     output reg [7:0] data_out
 );

@@ -5,54 +5,38 @@ module tb_spi_master;
     reg clk;
     reg reset;
     reg ready_state;
-    wire [7:0] data_out;
-    reg miso;
-    wire sclk;
-    wire mosi;
-    wire cs;
+    reg [2:0] select;
+    
+    reg [7:0] slave_data_in;
+    
+    wire [7:0] master_data_out;
     wire bit_cnt;
 
-    SPI_master master (
+  
+    SPI spi (
         .clk(clk),
         .reset(reset),
         .ready_state(ready_state),
-        .data_out(data_out),
-        .miso(miso),
-        .sclk(sclk),
-        .mosi(mosi),
-        .cs(cs),
-        .bit_cnt(bit_cnt)
+        .select(select),
+    
+        .slave_data_in(slave_data_in),
+    
+        .master_data_out(master_data_out), 
+        .bit_cnt(bit_cnt) 
     );
-
+    
     initial begin
         clk = 0;
         reset = 1;
         ready_state = 0;
         
-        miso = 1;
-        
         #10 reset = 0; ready_state = 1;
         
-        #10 miso = 0;
-        #10 miso = 1;
-        #10 miso = 0;
-        #10 miso = 1;
-        #10 miso = 0;
-        #10 miso = 1;
-        #10 miso = 0;
+        #50 slave_data_in = 8'hAA; 
+        #10 reset = 1; ready_state = 0;
         
-        
-        #10 reset = 0; ready_state = 0;
-        #10 reset = 1; ready_state = 1;
-
-        #10 miso = 0;
-        #10 miso = 1;
-        #10 miso = 0;
-        #10 miso = 1;
-        #10 miso = 0;
-        #10 miso = 1;
-        #10 miso = 0;
-        #10 miso = 1;
+        #10 reset = 0; ready_state = 1;
+        #50 slave_data_in = 8'h2B;
         
     end
 

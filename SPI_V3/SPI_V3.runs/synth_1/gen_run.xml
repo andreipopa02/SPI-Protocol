@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1721725265" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tb_spi_master.dcp">
-  <File Type="PA-TCL" Name="SPI_master.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="SPI_master_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="SPI_master_reports.tcl"/>
-  <File Type="RDS-RDS" Name="SPI_master.vds"/>
-  <File Type="RDS-UTIL" Name="SPI_master_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="SPI_master_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="SPI_master.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="SPI_master_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="SPI_master_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1721769954" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tb_spi_master.dcp">
+  <File Type="PA-TCL" Name="SPI.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="SPI_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="SPI_reports.tcl"/>
+  <File Type="RDS-RDS" Name="SPI.vds"/>
+  <File Type="RDS-UTIL" Name="SPI_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="SPI_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="SPI.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="SPI_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="SPI_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/modules.v">
+    <File Path="$PSRCDIR/sources_1/new/SPI_Master.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/SPI_Master.v">
+    <File Path="$PSRCDIR/sources_1/new/SPI_Modules.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SPI_Slave.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SPI.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -35,7 +49,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="SPI_master"/>
+      <Option Name="TopModule" Val="SPI"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
