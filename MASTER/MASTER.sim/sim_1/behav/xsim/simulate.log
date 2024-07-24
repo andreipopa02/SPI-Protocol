@@ -1,0 +1,16 @@
+Time resolution is 1 ps
+Time = 0, mosi = x, miso = 0, cs = 1, data_out = xxxxxxxx
+Time = 5000, mosi = 0, miso = 0, cs = 1, data_out = 00000000
+Time = 35000, mosi = 0, miso = 0, cs = 0, data_out = 00000000
+Time = 85000, mosi = 0, miso = 1, cs = 0, data_out = 00000000
+Time = 105000, mosi = 0, miso = 1, cs = 0, data_out = 00000001
+Time = 125000, mosi = 0, miso = 1, cs = 0, data_out = 00000011
+Time = 145000, mosi = 0, miso = 1, cs = 0, data_out = 00000111
+Time = 165000, mosi = 0, miso = 1, cs = 0, data_out = 00001111
+Time = 185000, mosi = 0, miso = 1, cs = 0, data_out = 00011111
+Time = 205000, mosi = 0, miso = 1, cs = 0, data_out = 00111111
+Time = 225000, mosi = 0, miso = 1, cs = 0, data_out = 01111111
+Time = 245000, mosi = 1, miso = 1, cs = 0, data_out = 11111111
+Time = 355000, mosi = 1, miso = 1, cs = 1, data_out = 11111111
+Time = 555000, mosi = 1, miso = 1, cs = 0, data_out = 11111111
+$finish called at time : 700 ns : File "C:/Users/Madalina/Desktop/sili/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/tb_SPI_master.v" Line 63
