@@ -7,13 +7,14 @@ module SPI_slave(
     input wire cs,            // Chip Select from master
     output wire miso,         // Master Input Slave Output
     
-    input wire [7:0] data_in    // Data to be sent to master
+    input wire [7:0] data_in,    // Data to be sent to masterz
+    input wire load_data
 );
     
     wire enable_cnt;
     wire enable_shift; 
     wire shift_in; 
-    wire load_data;
+  //  wire load_data;
     wire [2:0] bit_cnt;
     wire [7:0] shift_reg_in; 
     wire [7:0] shift_reg_out;

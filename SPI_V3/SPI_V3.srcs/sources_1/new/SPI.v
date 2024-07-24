@@ -7,6 +7,7 @@ module SPI(
     input wire [2:0] select,
     
     input wire [7:0] slave_data_in,
+    input wire load_data,   ///
     
     output wire [7:0] master_data_out, ///momentan il afisam pt debug
     output wire [2:0] bit_cnt /// ar trebui sa fie semnal intern, momentan il afisam pt debug
@@ -41,7 +42,8 @@ module SPI(
         .cs(cs),
         .miso(miso),
         
-        .data_in(slave_data_in)
+        .data_in(slave_data_in),
+        .load_data(load_data)
     );
     
 endmodule

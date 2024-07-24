@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Wed Jul 24 00:28:55 2024
+| Date             : Wed Jul 24 10:57:21 2024
 | Host             : DESKTOP-TO72V87 running 64-bit major release  (build 9200)
 | Command          : report_power -file SPI_power_routed.rpt -pb SPI_power_summary_routed.pb -rpx SPI_power_routed.rpx
 | Design           : SPI
@@ -137,12 +137,11 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------------------+-----------+
-| Name                 | Power (W) |
-+----------------------+-----------+
-| SPI                  |     0.006 |
-|   master             |     0.001 |
-|     divider_instance |     0.001 |
-+----------------------+-----------+
++----------+-----------+
+| Name     | Power (W) |
++----------+-----------+
+| SPI      |     0.006 |
+|   master |     0.001 |
++----------+-----------+
 
 

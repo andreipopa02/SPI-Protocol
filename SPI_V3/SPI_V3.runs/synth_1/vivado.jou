@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Wed Jul 24 00:26:04 2024
-# Process ID: 7288
+# Start of session at: Wed Jul 24 10:54:39 2024
+# Process ID: 19836
 # Current directory: D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.runs/synth_1
 # Command line: vivado.exe -log SPI.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI.tcl
 # Log file: D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.runs/synth_1/SPI.vds
@@ -19,6 +19,6 @@
 # Host memory       :17041 MB
 # Swap memory       :2550 MB
 # Total Virtual     :19591 MB
-# Available Virtual :10206 MB
+# Available Virtual :9564 MB
 #-----------------------------------------------------------
 source SPI.tcl -notrace
