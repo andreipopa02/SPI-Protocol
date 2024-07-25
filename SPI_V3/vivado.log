@@ -151,3 +151,31 @@ refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 close_hw_manager
 close_project
+open_project C:/Users/Madalina/Desktop/sili/SPI-Protocol/SLAVE/SLAVE.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/Madalina/Desktop/sili/SPI-Protocol/SLAVE/SLAVE.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+close_project
+INFO: [filemgmt 56-326] User Interrupt. Could not getCurrentGraph()
+INFO: [filemgmt 56-326] User Interrupt. Could not getCurrentGraph()
+open_project C:/Users/Madalina/Desktop/sili/SPI-Protocol/SLAVE/SLAVE.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/Madalina/Desktop/sili/SPI-Protocol/SLAVE/SLAVE.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+update_compile_order -fileset sources_1
+close_project
+open_project C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+update_compile_order -fileset sources_1
+close_project
