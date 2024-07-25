@@ -2,7 +2,7 @@
 2020.2
 May 22 2024
 19:03:11
-C:/Users/Madalina/Desktop/sili/SPI-Protocol/MASTER/MASTER.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
-C:/Users/Madalina/Desktop/sili/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/SPI_Master.v,1721838640,verilog,,C:/Users/Madalina/Desktop/sili/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/SPI_Master_Modules.v,,SPI_master,,,,,,,,
-C:/Users/Madalina/Desktop/sili/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/SPI_Master_Modules.v,1721838107,verilog,,C:/Users/Madalina/Desktop/sili/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/tb_SPI_master.v,,buffer;counter;freq_divider_MUX;fsm_master;shift_register,,,,,,,,
-C:/Users/Madalina/Desktop/sili/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/tb_SPI_master.v,1721838676,verilog,,,,tb_SPI_master,,,,,,,,
+D:/Summer_Practice_2024/SPI-Protocol/MASTER/MASTER.sim/sim_1/behav/xsim/glbl.v,1721922568,verilog,,,,glbl,,,,,,,,
+D:/Summer_Practice_2024/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/SPI_Master.v,1721931349,verilog,,D:/Summer_Practice_2024/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/SPI_Master_Modules.v,,SPI_master,,,,,,,,
+D:/Summer_Practice_2024/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/SPI_Master_Modules.v,1721933457,verilog,,D:/Summer_Practice_2024/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/SPI_Master.v,,buffer;counter;freq_divider;fsm_master;shift_register,,,,,,,,
+D:/Summer_Practice_2024/SPI-Protocol/MASTER/MASTER.srcs/sources_1/new/tb_SPI_master.v,1721932535,verilog,,,,tb_SPI_master,,,,,,,,

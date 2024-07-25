@@ -1,0 +1,89 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Jul 25 21:19:56 2024
+# Process ID: 23252
+# Current directory: D:/Summer_Practice_2024/SPI-Protocol/MASTER
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19036 D:\Summer_Practice_2024\SPI-Protocol\MASTER\MASTER.xpr
+# Log file: D:/Summer_Practice_2024/SPI-Protocol/MASTER/vivado.log
+# Journal file: D:/Summer_Practice_2024/SPI-Protocol/MASTER\vivado.jou
+# Running On        :DESKTOP-TO72V87
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+# CPU Frequency     :2592 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :17041 MB
+# Swap memory       :2550 MB
+# Total Virtual     :19591 MB
+# Available Virtual :8918 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/Summer_Practice_2024/SPI-Protocol/MASTER/MASTER.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_SPI_master.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run all
+relaunch_sim
+run all
+save_wave_config {D:/Summer_Practice_2024/SPI-Protocol/MASTER/tb_SPI_master_Wave_Form_Window.wcfg}
+relaunch_sim
+run all
+close_sim
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+source SPI_master.tcl
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+launch_simulation
+launch_simulation
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {D:/Summer_Practice_2024/SPI-Protocol/MASTER/MASTER.runs/impl_1/SPI_master.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/Summer_Practice_2024/SPI-Protocol/MASTER/MASTER.runs/impl_1/SPI_master.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/Summer_Practice_2024/SPI-Protocol/MASTER/MASTER.runs/impl_1/SPI_master.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw_manager
+close_sim
+launch_simulation
