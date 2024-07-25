@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.runs/impl_1/SPI.tcl"
+  variable script "C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.runs/impl_1/SPI.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,8 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -107,12 +106,11 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param chipscope.maxJobs 3
-  set_param checkpoint.writeSynthRtdsInDcp 1
+  set_param chipscope.maxJobs 5
   set_param xicom.use_bs_reader 1
-  set_param runs.launchOptions { -jobs 6  }
+  set_param runs.launchOptions { -jobs 10  }
   open_checkpoint SPI_routed.dcp
-  set_property webtalk.parent_dir D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.cache/wt [current_project]
+  set_property webtalk.parent_dir C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.cache/wt [current_project]
 set_property TOP SPI [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

@@ -1,5 +1,21 @@
 `timescale 1ns / 1ps
 
+module freq_divider(
+    input clk,                           //clock signal
+    output reg sclk                      //divided clock signal
+);
+    reg [27:0] counter = 28'd0;          //counter register, initialize with 0
+    parameter DIVISOR = 28'd100_000_000; // assuming a 100 MHz clock for a 1Hz output
+    //parameter DIVISOR = 28'd2; 
+    
+    always @(posedge clk) begin           //at always change of clock signal
+        counter <= counter + 28'd1;       //increments the counter
+        if (counter >= (DIVISOR - 1))     //greater than constant value DIVISOR
+            counter <= 28'd0;             //reset counter to 0
+        sclk <= (counter < DIVISOR/2) ? 1'b1 : 1'b0; //set output signal
+    end
+endmodule
+
 
 // Complex Divider Module
 module freq_divider_MUX(
@@ -40,15 +56,20 @@ endmodule
 module counter(
     input enable,                          //enabled the counting
     input clk,                             //clock signal
+    input reset,
     output reg [2:0] bit_cnt               //3-bit register
 );
     
     always @(posedge clk) begin            //at always change of clock signal
         if (enable) begin                  //if enable is high
-            if (bit_cnt == 3'b111)         //checks if heas reached the max value, 7
-                bit_cnt <= 0;              //reset to 0 
-            else
+          //  if (bit_cnt == 3'b111)         //checks if heas reached the max value, 7
+          //      bit_cnt <= 0;              //reset to 0 
+          //  else
                 bit_cnt <= bit_cnt + 1;    //otherwise  increments
+        end
+        
+        if(reset) begin
+            bit_cnt <= 3'b000;
         end
     end
 endmodule
@@ -114,7 +135,7 @@ module fsm_master(
         // Default values
         enable_cnt = 0;
         enable_shift = 0;
-        data_out = 8'b0;
+       // data_out = 8'b0;
         
         case (state)
             IDLE: begin
@@ -142,7 +163,7 @@ module fsm_master(
             DONE: begin
                 enable_cnt = 0;
                 enable_shift = 0;
-                next_state = IDLE;
+                next_state = DONE;
             end
             default: next_state = IDLE;
         endcase
@@ -150,7 +171,6 @@ module fsm_master(
 endmodule
 
 
-// FSM Slave Module
 module fsm_slave(
     input wire sclk,                // Serial clock from master
     input wire cs,                  // Chip select from master
@@ -174,7 +194,7 @@ module fsm_slave(
 
     always @(posedge sclk or negedge cs) begin
         if (!cs)  // Chip select active low
-            state <= IDLE;
+            state <= START;
         else
             state <= next_state;
     end
@@ -184,7 +204,7 @@ module fsm_slave(
         enable_cnt = 0;
         enable_shift = 0;
         pl = 0;
-        data_out = 8'b0;
+        //data_out = 8'b0;
 
         case (state)
         
@@ -223,7 +243,7 @@ module fsm_slave(
                 enable_cnt = 0;
                 enable_shift = 0;
                 pl = 0;
-                next_state = IDLE;
+                next_state = DONE;
             end
             
             default: begin
@@ -251,12 +271,12 @@ module shift_register_pl(
     end
     
     always @(posedge clk) begin
-        if(pl) begin
-            shift_reg <= data_in;
-        end 
-        
-        else if (enable_shift) begin
-            shift_reg <= {shift_reg[6:0], shift_in};
+        if (enable_shift) begin
+            if (pl) begin
+                shift_reg <= data_in;          
+            end else begin
+                shift_reg <= {shift_reg[6:0], shift_in}; 
+            end
         end
         
     data_out <= shift_reg;

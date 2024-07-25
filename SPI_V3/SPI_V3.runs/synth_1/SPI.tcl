@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.runs/synth_1/SPI.tcl"
+  variable script "C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.runs/synth_1/SPI.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,30 +56,28 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
-set_param checkpoint.writeSynthRtdsInDcp 1
+set_param chipscope.maxJobs 5
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.cache/wt [current_project]
-set_property parent.project_path D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.cache/wt [current_project]
+set_property parent.project_path C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo d:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.cache/ip [current_project]
+set_property ip_output_repo c:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Master.v
-  D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Modules.v
-  D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Slave.v
-  D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.srcs/sources_1/new/SPI.v
+  C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Master.v
+  C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Modules.v
+  C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Slave.v
+  C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -90,12 +88,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/Summer_Practice_2024/SPI_Project/Basys-3-Master.xdc
-set_property used_in_implementation false [get_files D:/Summer_Practice_2024/SPI_Project/Basys-3-Master.xdc]
+read_xdc C:/Users/Madalina/Desktop/sili/SPI-Protocol/Basys-3-Master.xdc
+set_property used_in_implementation false [get_files C:/Users/Madalina/Desktop/sili/SPI-Protocol/Basys-3-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.srcs/utils_1/imports/synth_1/tb_spi_master.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/utils_1/imports/synth_1/tb_spi_master.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

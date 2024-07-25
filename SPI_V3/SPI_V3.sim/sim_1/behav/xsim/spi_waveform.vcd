@@ -1,0 +1,1510 @@
+$date
+   Thu Jul 25 10:59:55 2024
+$end
+
+$version
+  2024.1
+  $dumpfile ("spi_waveform.vcd") 
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module tb_spi_master $end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$var reg 1 # ready_state $end
+$var reg 3 $ select [2:0] $end
+$var wire 8 % master_data_out [7:0] $end
+$var wire 8 & slave_data_out [7:0] $end
+$var reg 8 ' master_data_in [7:0] $end
+$var reg 8 ( slave_data_in [7:0] $end
+$var reg 1 ) load_data $end
+$scope module spi $end
+$var wire 1 * clk $end
+$var wire 1 + reset $end
+$var wire 1 , ready_state $end
+$var wire 3 - select [2:0] $end
+$var wire 8 % master_data_out [7:0] $end
+$var wire 8 & slave_data_out [7:0] $end
+$var wire 8 . master_data_in [7:0] $end
+$var wire 8 / slave_data_in [7:0] $end
+$var wire 1 0 load_data $end
+$var wire 1 1 sclk $end
+$var wire 1 2 mosi $end
+$var wire 1 3 cs $end
+$var wire 1 4 miso $end
+$scope module master $end
+$var wire 1 * clk $end
+$var wire 1 + reset $end
+$var wire 1 , ready_state $end
+$var wire 3 - select [2:0] $end
+$var wire 1 1 sclk $end
+$var wire 1 4 miso $end
+$var wire 1 2 mosi $end
+$var wire 1 3 cs $end
+$var wire 8 . data_in [7:0] $end
+$var wire 1 0 load_data $end
+$var wire 8 % data_out [7:0] $end
+$var wire 1 5 enable_cnt $end
+$var wire 1 6 enable_shift $end
+$var wire 3 7 bit_cnt [2:0] $end
+$var wire 8 8 shift_reg_in [7:0] $end
+$var wire 1 9 shift_in $end
+$scope module divider_instance $end
+$var wire 1 * clk $end
+$var wire 3 - select [2:0] $end
+$var reg 1 : sclk $end
+$var reg 28 ; counter [27:0] $end
+$var reg 28 < divisor [27:0] $end
+$upscope $end
+$scope module fsm_master_instance $end
+$var wire 1 1 clk $end
+$var wire 1 + reset $end
+$var wire 1 , ready_state $end
+$var wire 3 7 bit_cnt [2:0] $end
+$var reg 1 = enable_cnt $end
+$var reg 1 > enable_shift $end
+$var reg 8 ? data_out [7:0] $end
+$var reg 2 @ state [1:0] $end
+$var reg 2 A next_state [1:0] $end
+$upscope $end
+$scope module cnt_instance $end
+$var wire 1 5 enable $end
+$var wire 1 1 clk $end
+$var reg 3 B bit_cnt [2:0] $end
+$upscope $end
+$scope module rx_buff_instance $end
+$var wire 1 4 data_in $end
+$var wire 1 9 data_out $end
+$upscope $end
+$scope module shift_reg_instance $end
+$var wire 1 1 clk $end
+$var wire 1 6 enable_shift $end
+$var wire 1 9 shift_in $end
+$var wire 1 0 pl $end
+$var wire 8 . data_in [7:0] $end
+$var reg 8 C data_out [7:0] $end
+$var reg 8 D shift_reg [7:0] $end
+$upscope $end
+$scope module tx_buff_instance $end
+$var wire 1 E data_in $end
+$var wire 1 2 data_out $end
+$upscope $end
+$upscope $end
+$scope module slave $end
+$var wire 1 1 sclk $end
+$var wire 1 2 mosi $end
+$var wire 1 3 cs $end
+$var wire 1 4 miso $end
+$var wire 8 / data_in [7:0] $end
+$var wire 1 0 load_data $end
+$var wire 8 & data_out [7:0] $end
+$var wire 1 F enable_cnt $end
+$var wire 1 G enable_shift $end
+$var wire 1 H shift_in $end
+$var wire 3 I bit_cnt [2:0] $end
+$var wire 8 J shift_reg_in [7:0] $end
+$var wire 8 K shift_reg_out [7:0] $end
+$scope module fsm_slave_instance $end
+$var wire 1 1 sclk $end
+$var wire 1 3 cs $end
+$var wire 3 I bit_cnt [2:0] $end
+$var wire 8 / data_in [7:0] $end
+$var reg 1 L enable_cnt $end
+$var reg 1 M enable_shift $end
+$var reg 1 N pl $end
+$var reg 8 O data_out [7:0] $end
+$var reg 2 P state [1:0] $end
+$var reg 2 Q next_state [1:0] $end
+$upscope $end
+$scope module cnt_instance $end
+$var wire 1 F enable $end
+$var wire 1 1 clk $end
+$var reg 3 R bit_cnt [2:0] $end
+$upscope $end
+$scope module rx_buff_instance $end
+$var wire 1 2 data_in $end
+$var wire 1 H data_out $end
+$upscope $end
+$scope module shift_reg_instance $end
+$var wire 1 1 clk $end
+$var wire 1 G enable_shift $end
+$var wire 1 H shift_in $end
+$var wire 1 0 pl $end
+$var wire 8 J data_in [7:0] $end
+$var reg 8 S data_out [7:0] $end
+$var reg 8 T shift_reg [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+0"
+0#
+b0 $
+bx %
+bx &
+b0 '
+b0 (
+0)
+0*
+0+
+0,
+b0 -
+b0 .
+b0 /
+00
+x1
+x2
+13
+x4
+05
+06
+bx 7
+bx 8
+x9
+x:
+b0 ;
+b10 <
+0=
+0>
+bx ?
+bx @
+b0 A
+bx B
+bx C
+b0 D
+xE
+0F
+0G
+xH
+bx I
+bx J
+bx K
+0L
+0M
+0N
+bx O
+bx P
+b0 Q
+bx R
+bx S
+b0 T
+$end
+
+#5000
+1!
+1"
+b0 %
+b0 &
+1*
+1+
+11
+02
+04
+b0 8
+09
+1:
+b1 ;
+b0 ?
+b0 @
+b0 C
+0E
+0H
+b0 J
+b0 K
+b0 O
+b0 P
+b0 S
+
+#10000
+0!
+0*
+
+#15000
+1!
+0"
+1*
+0+
+01
+0:
+b0 ;
+
+#20000
+0!
+0*
+
+#25000
+1!
+1*
+11
+1:
+b1 ;
+
+#30000
+0!
+0*
+
+#35000
+1!
+1#
+b1011010 '
+b10100101 (
+1)
+1*
+1,
+b1011010 .
+b10100101 /
+x0
+01
+03
+0:
+b0 ;
+b1 A
+1F
+1G
+b10100101 J
+1L
+1M
+1N
+b10100101 O
+b1 P
+b10 Q
+
+#40000
+0!
+0*
+10
+
+#45000
+1!
+1*
+11
+15
+16
+1:
+b1 ;
+1=
+1>
+b1 @
+b10 A
+b10100101 T
+
+#50000
+0!
+0*
+
+#55000
+1!
+1*
+01
+0:
+b0 ;
+
+#60000
+0!
+0*
+
+#65000
+1!
+b10100101 &
+1*
+11
+14
+19
+1:
+b1 ;
+1=
+1>
+b10 @
+b1011010 D
+b10100101 K
+b10100101 S
+
+#70000
+0!
+0*
+
+#75000
+1!
+1*
+01
+0:
+b0 ;
+
+#80000
+0!
+0*
+
+#85000
+1!
+b1011010 %
+0)
+1*
+x0
+11
+1:
+b1 ;
+b1011010 C
+b10110101 D
+0E
+b1001010 T
+
+#90000
+0!
+0*
+
+#95000
+1!
+1*
+01
+0:
+b0 ;
+
+#100000
+0!
+0*
+
+#105000
+1!
+b10110101 %
+b1001010 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b10110101 C
+b1101011 D
+1E
+1H
+b1001010 K
+b1001010 S
+b10010100 T
+
+#110000
+0!
+0*
+
+#115000
+1!
+1*
+01
+0:
+b0 ;
+
+#120000
+0!
+0*
+
+#125000
+1!
+b1101011 %
+b10010100 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b1101011 C
+b11010110 D
+0E
+0H
+b10010100 K
+b10010100 S
+b101001 T
+
+#130000
+0!
+0*
+
+#135000
+1!
+1*
+01
+0:
+b0 ;
+
+#140000
+0!
+0*
+
+#145000
+1!
+b11010110 %
+b101001 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b11010110 C
+b10101101 D
+1E
+1H
+b101001 K
+b101001 S
+b1010010 T
+
+#150000
+0!
+0*
+
+#155000
+1!
+1*
+01
+0:
+b0 ;
+
+#160000
+0!
+0*
+
+#165000
+1!
+b10101101 %
+b1010010 &
+1*
+11
+1:
+b1 ;
+b10101101 C
+b1011010 D
+1E
+b1010010 K
+b1010010 S
+b10100101 T
+
+#170000
+0!
+0*
+
+#175000
+1!
+1*
+01
+0:
+b0 ;
+
+#180000
+0!
+0*
+
+#185000
+1!
+b1011010 %
+b10100101 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b1011010 C
+b10110100 D
+0E
+0H
+b10100101 K
+b10100101 S
+b1001011 T
+
+#190000
+0!
+0*
+
+#195000
+1!
+1*
+01
+0:
+b0 ;
+
+#200000
+0!
+0*
+
+#205000
+1!
+b10110100 %
+b1001011 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b10110100 C
+b1101001 D
+1E
+1H
+b1001011 K
+b1001011 S
+b10010110 T
+
+#210000
+0!
+0*
+
+#215000
+1!
+1*
+01
+0:
+b0 ;
+
+#220000
+0!
+0*
+
+#225000
+1!
+b1101001 %
+b10010110 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b1101001 C
+b11010010 D
+0E
+0H
+b10010110 K
+b10010110 S
+b101101 T
+
+#230000
+0!
+0*
+
+#235000
+1!
+1*
+01
+0:
+b0 ;
+
+#240000
+0!
+0*
+
+#245000
+1!
+b11010010 %
+b101101 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b11010010 C
+b10100101 D
+1E
+1H
+b101101 K
+b101101 S
+b1011010 T
+
+#250000
+0!
+0*
+
+#255000
+1!
+1*
+01
+0:
+b0 ;
+
+#260000
+0!
+0*
+
+#265000
+1!
+b10100101 %
+b1011010 &
+1*
+11
+1:
+b1 ;
+b10100101 C
+b1001010 D
+1E
+b1011010 K
+b1011010 S
+b10110101 T
+
+#270000
+0!
+0*
+
+#275000
+1!
+1*
+01
+0:
+b0 ;
+
+#280000
+0!
+0*
+
+#285000
+1!
+0#
+b1001010 %
+b10110101 &
+1*
+0,
+11
+02
+13
+14
+19
+1:
+b1 ;
+1=
+1>
+b1001010 C
+b10010100 D
+0E
+0H
+b10110101 K
+1L
+1M
+0N
+b10 P
+b10110101 S
+b1101011 T
+
+#290000
+0!
+0*
+00
+
+#295000
+1!
+1*
+01
+0:
+b0 ;
+
+#300000
+0!
+0*
+
+#305000
+1!
+b10010100 %
+b1101011 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b10010100 C
+b101001 D
+1E
+1H
+b1101011 K
+b1101011 S
+b11010110 T
+
+#310000
+0!
+0*
+
+#315000
+1!
+1*
+01
+0:
+b0 ;
+
+#320000
+0!
+0*
+
+#325000
+1!
+b101001 %
+b11010110 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b101001 C
+b1010010 D
+0E
+0H
+b11010110 K
+b11010110 S
+b10101101 T
+
+#330000
+0!
+0*
+
+#335000
+1!
+1*
+01
+0:
+b0 ;
+
+#340000
+0!
+0*
+
+#345000
+1!
+b1010010 %
+b10101101 &
+1*
+11
+1:
+b1 ;
+b1010010 C
+b10100101 D
+0E
+b10101101 K
+b10101101 S
+b1011010 T
+
+#350000
+0!
+0*
+
+#355000
+1!
+1*
+01
+0:
+b0 ;
+
+#360000
+0!
+0*
+
+#365000
+1!
+b10100101 %
+b1011010 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b10100101 C
+b1001011 D
+1E
+1H
+b1011010 K
+b1011010 S
+b10110100 T
+
+#370000
+0!
+0*
+
+#375000
+1!
+1*
+01
+0:
+b0 ;
+
+#380000
+0!
+0*
+
+#385000
+1!
+b1001011 %
+b10110100 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b1001011 C
+b10010110 D
+0E
+0H
+b10110100 K
+b10110100 S
+b1101001 T
+
+#390000
+0!
+0*
+
+#395000
+1!
+1*
+01
+0:
+b0 ;
+
+#400000
+0!
+0*
+
+#405000
+1!
+b10010110 %
+b1101001 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b10010110 C
+b101101 D
+1E
+1H
+b1101001 K
+b1101001 S
+b11010010 T
+
+#410000
+0!
+0*
+
+#415000
+1!
+1*
+01
+0:
+b0 ;
+
+#420000
+0!
+0*
+
+#425000
+1!
+b101101 %
+b11010010 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b101101 C
+b1011010 D
+0E
+0H
+b11010010 K
+b11010010 S
+b10100101 T
+
+#430000
+0!
+0*
+
+#435000
+1!
+1*
+01
+0:
+b0 ;
+
+#440000
+0!
+0*
+
+#445000
+1!
+b1011010 %
+b10100101 &
+1*
+11
+1:
+b1 ;
+b1011010 C
+b10110101 D
+0E
+b10100101 K
+b10100101 S
+b1001010 T
+
+#450000
+0!
+0*
+
+#455000
+1!
+1*
+01
+0:
+b0 ;
+
+#460000
+0!
+0*
+
+#465000
+1!
+b10110101 %
+b1001010 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b10110101 C
+b1101011 D
+1E
+1H
+b1001010 K
+b1001010 S
+b10010100 T
+
+#470000
+0!
+0*
+
+#475000
+1!
+1*
+01
+0:
+b0 ;
+
+#480000
+0!
+0*
+
+#485000
+1!
+b1101011 %
+b10010100 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b1101011 C
+b11010110 D
+0E
+0H
+b10010100 K
+b10010100 S
+b101001 T
+
+#490000
+0!
+0*
+
+#495000
+1!
+1*
+01
+0:
+b0 ;
+
+#500000
+0!
+0*
+
+#505000
+1!
+b11010110 %
+b101001 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b11010110 C
+b10101101 D
+1E
+1H
+b101001 K
+b101001 S
+b1010010 T
+
+#510000
+0!
+0*
+
+#515000
+1!
+1*
+01
+0:
+b0 ;
+
+#520000
+0!
+0*
+
+#525000
+1!
+b10101101 %
+b1010010 &
+1*
+11
+1:
+b1 ;
+b10101101 C
+b1011010 D
+1E
+b1010010 K
+b1010010 S
+b10100101 T
+
+#530000
+0!
+0*
+
+#535000
+1!
+1*
+01
+0:
+b0 ;
+
+#540000
+0!
+0*
+
+#545000
+1!
+b1011010 %
+b10100101 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b1011010 C
+b10110100 D
+0E
+0H
+b10100101 K
+b10100101 S
+b1001011 T
+
+#550000
+0!
+0*
+
+#555000
+1!
+1*
+01
+0:
+b0 ;
+
+#560000
+0!
+0*
+
+#565000
+1!
+b10110100 %
+b1001011 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b10110100 C
+b1101001 D
+1E
+1H
+b1001011 K
+b1001011 S
+b10010110 T
+
+#570000
+0!
+0*
+
+#575000
+1!
+1*
+01
+0:
+b0 ;
+
+#580000
+0!
+0*
+
+#585000
+1!
+b1101001 %
+b10010110 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b1101001 C
+b11010010 D
+0E
+0H
+b10010110 K
+b10010110 S
+b101101 T
+
+#590000
+0!
+0*
+
+#595000
+1!
+1*
+01
+0:
+b0 ;
+
+#600000
+0!
+0*
+
+#605000
+1!
+b11010010 %
+b101101 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b11010010 C
+b10100101 D
+1E
+1H
+b101101 K
+b101101 S
+b1011010 T
+
+#610000
+0!
+0*
+
+#615000
+1!
+1*
+01
+0:
+b0 ;
+
+#620000
+0!
+0*
+
+#625000
+1!
+b10100101 %
+b1011010 &
+1*
+11
+1:
+b1 ;
+b10100101 C
+b1001010 D
+1E
+b1011010 K
+b1011010 S
+b10110101 T
+
+#630000
+0!
+0*
+
+#635000
+1!
+1*
+01
+0:
+b0 ;
+
+#640000
+0!
+0*
+
+#645000
+1!
+b1001010 %
+b10110101 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b1001010 C
+b10010100 D
+0E
+0H
+b10110101 K
+b10110101 S
+b1101011 T
+
+#650000
+0!
+0*
+
+#655000
+1!
+1*
+01
+0:
+b0 ;
+
+#660000
+0!
+0*
+
+#665000
+1!
+b10010100 %
+b1101011 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b10010100 C
+b101001 D
+1E
+1H
+b1101011 K
+b1101011 S
+b11010110 T
+
+#670000
+0!
+0*
+
+#675000
+1!
+1*
+01
+0:
+b0 ;
+
+#680000
+0!
+0*
+
+#685000
+1!
+b101001 %
+b11010110 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b101001 C
+b1010010 D
+0E
+0H
+b11010110 K
+b11010110 S
+b10101101 T
+
+#690000
+0!
+0*
+
+#695000
+1!
+1*
+01
+0:
+b0 ;
+
+#700000
+0!
+0*
+
+#705000
+1!
+b1010010 %
+b10101101 &
+1*
+11
+1:
+b1 ;
+b1010010 C
+b10100101 D
+0E
+b10101101 K
+b10101101 S
+b1011010 T
+
+#710000
+0!
+0*
+
+#715000
+1!
+1*
+01
+0:
+b0 ;
+
+#720000
+0!
+0*
+
+#725000
+1!
+b10100101 %
+b1011010 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b10100101 C
+b1001011 D
+1E
+1H
+b1011010 K
+b1011010 S
+b10110100 T
+
+#730000
+0!
+0*
+
+#735000
+1!
+1*
+01
+0:
+b0 ;
+
+#740000
+0!
+0*
+
+#745000
+1!
+b1001011 %
+b10110100 &
+1*
+11
+02
+14
+19
+1:
+b1 ;
+b1001011 C
+b10010110 D
+0E
+0H
+b10110100 K
+b10110100 S
+b1101001 T
+
+#750000
+0!
+0*
+
+#755000
+1!
+1*
+01
+0:
+b0 ;
+
+#760000
+0!
+0*
+
+#765000
+1!
+b10010110 %
+b1101001 &
+1*
+11
+12
+04
+09
+1:
+b1 ;
+b10010110 C
+b101101 D
+1E
+1H
+b1101001 K
+b1101001 S
+b11010010 T
+
+#770000
+0!
+0*
+
+#775000
+1!
+1*
+01
+0:
+b0 ;
+
+#780000
+0!
+0*

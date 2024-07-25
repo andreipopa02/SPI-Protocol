@@ -1,40 +1,65 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="qwert" Host="DESKTOP-TO72V87" Pid="12316" HostCore="12" HostMemory="017041244160">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="1208" HostCore="20" HostMemory="016782172160">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="qwert" Host="DESKTOP-TO72V87" Pid="3852" HostCore="12" HostMemory="017041244160">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="3952" HostCore="20" HostMemory="016782172160">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="qwert" Host="DESKTOP-TO72V87" Pid="15728" HostCore="12" HostMemory="017041244160">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="3328" HostCore="20" HostMemory="016782172160">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="qwert" Host="DESKTOP-TO72V87" Pid="14980" HostCore="12" HostMemory="017041244160">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="19204" HostCore="20" HostMemory="016782172160">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="qwert" Host="DESKTOP-TO72V87" Pid="11748" HostCore="12" HostMemory="017041244160">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="12884" HostCore="20" HostMemory="016782172160">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="qwert" Host="DESKTOP-TO72V87" Pid="16012" HostCore="12" HostMemory="017041244160">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="2288" HostCore="20" HostMemory="016782172160">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="qwert" Host="DESKTOP-TO72V87" Pid="3556" HostCore="12" HostMemory="017041244160">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="22252" HostCore="20" HostMemory="016782172160">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="qwert" Host="DESKTOP-TO72V87" Pid="12924" HostCore="12" HostMemory="017041244160">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="17188" HostCore="20" HostMemory="016782172160">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="24092" HostCore="20" HostMemory="016782172160">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="25488" HostCore="20" HostMemory="016782172160">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="24368" HostCore="20" HostMemory="016782172160">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="13732" HostCore="20" HostMemory="016782172160">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Madalina" Host="DESKTOP-C85PAQU" Pid="600" HostCore="20" HostMemory="016782172160">
     </Process>
 </ProcessHandle>

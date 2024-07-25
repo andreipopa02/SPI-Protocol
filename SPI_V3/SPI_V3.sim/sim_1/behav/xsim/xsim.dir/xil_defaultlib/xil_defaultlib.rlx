@@ -2,7 +2,9 @@
 2020.2
 May 22 2024
 19:03:11
-D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
-D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Master.v,1721639401,verilog,,D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.srcs/sources_1/new/modules.v,,SPI_master,,,,,,,,
-D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.srcs/sources_1/new/modules.v,1721721015,verilog,,D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Master.v,,buffer;counter;freq_divider;fsm;shift_register,,,,,,,,
-D:/Summer_Practice_2024/SPI_Project/SPI_V3/SPI_V3.srcs/sources_1/new/tb_spi_master.v,1721641229,verilog,,,,tb_spi_master,,,,,,,,
+C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.sim/sim_1/behav/xsim/glbl.v,1721831031,verilog,,,,glbl,,,,,,,,
+C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI.v,1721897703,verilog,,C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Master.v,,SPI,,,,,,,,
+C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Master.v,1721897644,verilog,,C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Modules.v,,SPI_Master,,,,,,,,
+C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Modules.v,1721897588,verilog,,C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Slave.v,,buffer;counter;freq_divider;freq_divider_MUX;fsm_master;fsm_slave;shift_register;shift_register_pl,,,,,,,,
+C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/SPI_Slave.v,1721897381,verilog,,C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/tb_spi_master.v,,SPI_Slave,,,,,,,,
+C:/Users/Madalina/Desktop/sili/SPI-Protocol/SPI_V3/SPI_V3.srcs/sources_1/new/tb_spi_master.v,1721897119,verilog,,,,tb_spi_master,,,,,,,,

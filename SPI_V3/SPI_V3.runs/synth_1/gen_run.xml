@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1721807674" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tb_spi_master.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1721898290" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tb_spi_master.dcp">
   <File Type="PA-TCL" Name="SPI.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="SPI_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="SPI_reports.tcl"/>
