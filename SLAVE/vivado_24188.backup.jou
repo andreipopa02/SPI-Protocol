@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Jul 24 18:20:02 2024
+# Process ID: 24188
+# Current directory: C:/Users/Madalina/Desktop/sili/SPI-Protocol/SLAVE
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12656 C:\Users\Madalina\Desktop\sili\SPI-Protocol\SLAVE\SLAVE.xpr
+# Log file: C:/Users/Madalina/Desktop/sili/SPI-Protocol/SLAVE/vivado.log
+# Journal file: C:/Users/Madalina/Desktop/sili/SPI-Protocol/SLAVE\vivado.jou
+# Running On        :DESKTOP-C85PAQU
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :12th Gen Intel(R) Core(TM) i7-12700H
+# CPU Frequency     :2688 MHz
+# CPU Physical cores:14
+# CPU Logical cores :20
+# Host memory       :16782 MB
+# Swap memory       :2550 MB
+# Total Virtual     :19332 MB
+# Available Virtual :11750 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Madalina/Desktop/sili/SPI-Protocol/SLAVE/SLAVE.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_SPI_slave.tcl
+relaunch_sim
+close_sim
+launch_simulation
+source tb_SPI_slave.tcl
+close_sim
+launch_simulation
+source tb_SPI_slave.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+source tb_SPI_slave.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim

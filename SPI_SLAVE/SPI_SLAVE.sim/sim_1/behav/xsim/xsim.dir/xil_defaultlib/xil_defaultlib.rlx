@@ -1,0 +1,8 @@
+0.7
+2020.2
+May 22 2024
+19:03:11
+D:/Summer_Practice_2024/SPI-Protocol/SPI_SLAVE/SPI_SLAVE.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
+D:/Summer_Practice_2024/SPI-Protocol/SPI_SLAVE/SPI_SLAVE.srcs/sources_1/new/SPI_Slave.v,1721939150,verilog,,D:/Summer_Practice_2024/SPI-Protocol/SPI_SLAVE/SPI_SLAVE.srcs/sources_1/new/SPI_Slave_Modules.v,,SPI_Slave,,,,,,,,
+D:/Summer_Practice_2024/SPI-Protocol/SPI_SLAVE/SPI_SLAVE.srcs/sources_1/new/SPI_Slave_Modules.v,1721942365,verilog,,D:/Summer_Practice_2024/SPI-Protocol/SPI_SLAVE/SPI_SLAVE.srcs/sources_1/new/tb_SPI_Slave.v,,fsm_slave,,,,,,,,
+D:/Summer_Practice_2024/SPI-Protocol/SPI_SLAVE/SPI_SLAVE.srcs/sources_1/new/tb_SPI_Slave.v,1721977557,verilog,,,,tb_SPI_Slave,,,,,,,,

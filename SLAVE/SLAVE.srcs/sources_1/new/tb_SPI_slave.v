@@ -1,59 +1,77 @@
+
+
 `timescale 1ns / 1ps
 
 module tb_SPI_slave;
-    reg clk;
+    reg sclk;
+    wire miso;
     reg mosi;
     reg cs;
-    wire miso;
     
-    reg [7:0] data_in;
-    reg load_data;
-    wire [7:0] data_out;
-  
+    wire [7:0] slave_data_out;
+
+
     SPI_Slave slave (
-        .sclk(clk),
+        .sclk(sclk),
+        .miso(miso),
         .mosi(mosi),
         .cs(cs),
-        .miso(miso),
-        .data_in(data_in),
-        .load_data(load_data),
-        .data_out(data_out)
+        
+        .slave_data_out(slave_data_out)
     );
     
     initial begin
-        clk = 0;
-        cs = 1;
-        load_data = 0;
-        mosi = 0;
-        data_in = 0;
+        #0  // Default values
+            sclk = 1;
+            cs = 0;
         
-        // Wait for some time before starting the simulation
-        #10;
+        #10 cs = 1;
+        // Test no 1: -> 8'b0101_0101 (8'h3_3) received from MASTER 
+        #80 mosi = 0;
         
-        // Load data and start SPI transaction
-        load_data = 1;
-        data_in = 8'h00;
-        cs = 0;
-        #10;
-        load_data = 0;
-
-        // Simulate MOSI data transmission
-        #10 mosi = 1; // Transmit bit 7
-        #10 mosi = 1; // Transmit bit 6
-        #10 mosi = 1; // Transmit bit 5
-        #10 mosi = 1; // Transmit bit 4
-        #10 mosi = 1; // Transmit bit 3
-        #10 mosi = 1; // Transmit bit 2
-        #10 mosi = 1; // Transmit bit 1
-        #10 mosi = 1; // Transmit bit 0
-
-        #10 cs = 1; // Deactivate chip select
+        #20 mosi = 1;
+        #20 mosi = 0;
+        #20 mosi = 1;
+        #20 mosi = 0;
+        #20 mosi = 1;
+        #20 mosi = 0;
+        #20 mosi = 1;
+            cs = 0;
+      
+      
+      /*
+        
+        // Test no 2: -> 8'b0100_1111 (8'h4_F) received from MASTER 
+        #80 mosi = 0;
+        #40 mosi = 1;
+        #40 mosi = 0;
+        #40 mosi = 0;
+        #40 mosi = 1;
+        #40 mosi = 1;
+        #40 mosi = 1;
+        #40 mosi = 1;
+       
+       
+        // Test no3 : -> 8'b0110_0111 (8'h6_7) received from MASTER 
+        #160 mosi = 0;
+        #80 mosi = 1;
+        #80 mosi = 1;
+        #80 mosi = 0;
+        #80 mosi = 0;
+        #80 mosi = 1;
+        #80 mosi = 1;
+        #80 mosi = 1;
+        */
+        
+        
     end
-
-    always #5 clk = ~clk;
-
+    
+   always #10 sclk = ~sclk;
+     
     initial begin
-        $monitor("Time = %0t , data_in = %b, data_out = %b, mosi = %b, miso = %b", $time, data_in, data_out, mosi, miso);
-        #130 $finish;
+        #500 $finish;
     end
+    
+
 endmodule
+

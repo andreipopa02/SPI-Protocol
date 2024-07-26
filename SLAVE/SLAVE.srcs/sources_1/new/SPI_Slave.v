@@ -1,55 +1,63 @@
 `timescale 1ns / 1ps
 
+
 module SPI_Slave(
     input wire sclk,
     input wire mosi,
     input wire cs,
     output wire miso,
     
-    input wire [7:0] data_in,
-    input wire load_data,
-    output wire [7:0] data_out
+    output wire [7:0] slave_data_out 
 );
-
-    wire enable_cnt;
-    wire enable_shift;
+    wire enable;
+    wire done_flag;
     wire shift_in;
-    wire [2:0] bit_cnt;
-    wire [7:0] shift_reg_in;
-    wire [7:0] shift_reg_out;
-
+    
+    
+    // FSM: 
+    // Controls the SPI transaction states and generates 
+    // enable signal for the counter and shift register
     fsm_slave fsm_slave_instance (
-        .sclk(sclk),
-        .cs(cs),
-        .bit_cnt(bit_cnt),
-        .data_in(data_in),
-        .enable_cnt(enable_cnt),
-        .enable_shift(enable_shift),
-        .pl(load_data),
-        .data_out(shift_reg_in)
+        .sclk(sclk), 
+        .cs(cs),    
+        .done(done_flag), 
+        
+        .enable(enable)
     );
-
+    
+    // Counter: 
+    // Counts the number of bits transmitted/received 
+    // and generates done signal when complete
     counter cnt_instance (
-        .enable(enable_cnt),
-        .clk(sclk),
-        .bit_cnt(bit_cnt)
+        .clk(sclk), 
+        .enable(enable),
+        .done(done_flag)
     );
-
+    
+    // Receive buffer: 
+    // Buffers the incoming data from the MISO line
     buffer rx_buff_instance (
-        .data_in(mosi),
+        .data_in(mosi), 
         .data_out(shift_in)
     );
-
-    shift_register_pl shift_reg_instance (
-        .clk(sclk),
-        .enable_shift(enable_shift),
-        .shift_in(shift_in),
-        .data_in(shift_reg_in),
-        .pl(load_data),
-        .data_out(shift_reg_out)
+    
+    // Shift register: 
+    // Shifts in the received data and outputs 
+    // the full byte once all bits are received
+    shift_register shift_reg_instance (
+        .clk(sclk), 
+        .enable(enable), 
+        .shift_in(shift_in), 
+        .data_out(slave_data_out)
     );
-
-    assign miso = shift_reg_out[7];
-    assign data_out = shift_reg_out;
-
+    
+    // Transmit buffer: 
+    // Buffers the outgoing data from the 
+    // shift register to the MOSI line
+    buffer tx_buff_instance (
+        .data_in(slave_data_out[7]), 
+        .data_out(miso)
+    );
+                 
+   
 endmodule
