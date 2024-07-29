@@ -1,0 +1,10 @@
+0.7
+2020.2
+May 22 2024
+19:03:11
+D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
+D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.srcs/sim_1/new/tb_top.v,1722188359,verilog,,D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.srcs/sources_1/new/top.v,,tb_top,,,,,,,,
+D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.srcs/sources_1/new/master.v,1722188227,verilog,,D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.srcs/sources_1/new/modules.v,,master,,,,,,,,
+D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.srcs/sources_1/new/modules.v,1722188227,verilog,,D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.srcs/sources_1/new/slave.v,,counter;freq_divider_MUX;fsm_master;fsm_slave;shift_register_master;shift_register_slave,,,,,,,,
+D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.srcs/sources_1/new/slave.v,1722188227,verilog,,D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.srcs/sources_1/new/top.v,,slave,,,,,,,,
+D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.srcs/sources_1/new/top.v,1722188227,verilog,,D:/Project/SPI_MASTER+SLAVE/SPI_MASTER+SLAVE.srcs/sim_1/new/tb_top.v,,top,,,,,,,,
