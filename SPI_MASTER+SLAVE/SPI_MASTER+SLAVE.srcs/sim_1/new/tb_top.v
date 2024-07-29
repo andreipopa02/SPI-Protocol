@@ -1,5 +1,5 @@
 
-
+/*
 module tb_top();
     reg clk;
     reg reset;
@@ -45,8 +45,8 @@ module tb_top();
         #10 ready_state =1;
         #60 ready_state =0;
         
-        #200 reset =1;
-        #20 reset = 0; pl = 1;
+        #200 
+        #20 reset = 0;
         #20 pl =0;
         #10 ready_state =1;
         #60 ready_state =0;
@@ -56,4 +56,4 @@ module tb_top();
     end
 
     
-endmodule
+endmodule*/

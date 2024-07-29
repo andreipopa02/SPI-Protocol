@@ -59,13 +59,13 @@ module counter(
     input reset,                           //reset
     input enable,                          //enable counting
     
-    output reg [2:0] out_cnt               //output
+    output reg [3:0] out_cnt               //output
 );
     always @(posedge clk or posedge reset) begin           
         if(reset)
-            out_cnt <= 3'b000 ;
+            out_cnt <= 4'b0000 ;
         else if (enable) begin                  
-            if (out_cnt == 3'b111)        
+            if (out_cnt == 4'b1000)        
                 out_cnt <= 0;              
             else
                 out_cnt <= out_cnt + 1;    
@@ -91,8 +91,10 @@ module shift_register_master(
             mosi <= 1'b0;
         end 
         else if(pl) begin
-            data_out<= data_in;
-            //mosi <= data_in[7];                  
+            data_out= data_in;
+            // mosi = data_in[7]; 
+             //data_out = {data_out[6:0], miso};
+                     
         end 
         else if (enable) begin
             data_out <= {data_out[6:0], miso};
@@ -106,7 +108,7 @@ module fsm_master(
     input clk,                              //clock signal
     input reset,                            //reset
     input ready_state,                      //start the data transmission process
-    input [2:0] bit_cnt,                    //input from counter
+    input [3:0] bit_cnt,                    //input from counter
     
     output reg enable_cnt,                  //control signal used for enabling the counter
     output reg enable_shift                //control signal used for enabling the shift register
@@ -141,7 +143,7 @@ module fsm_master(
             TRANSFER: begin
                enable_cnt = 1;
                enable_shift = 1;
-               if (bit_cnt == 3'b111) begin
+               if (bit_cnt == 4'b1000) begin
                   enable_cnt = 0;
                   enable_shift = 0;
                   next_state = IDLE;
@@ -172,8 +174,9 @@ module shift_register_slave(
             miso <= 1'b0;
         end 
         else if(pl) begin
-            data_out<= data_in; 
-            //miso <= data_in[7];                
+            data_out= data_in; 
+            //miso = data_in[7];
+            //data_out = {data_out[6:0], mosi};              
         end 
         else if (enable) begin
             data_out <= {data_out[6:0], mosi};
@@ -187,7 +190,7 @@ module fsm_slave(
     input clk,                              //clock signal
     input reset,                            //reset
     input cs,                               //start the data transmission process
-    input [2:0] bit_cnt,                    //input from counter
+    input [3:0] bit_cnt,                    //input from counter
     
     output reg enable_cnt,                  //control signal used for enabling the counter
     output reg enable_shift                //control signal used for enabling the shift register
@@ -223,7 +226,7 @@ module fsm_slave(
             TRANSFER: begin
                enable_cnt = 1;
                enable_shift = 1;
-               if (bit_cnt == 3'b111) begin
+               if (bit_cnt == 4'b1000) begin
                     enable_cnt = 0;
                     enable_shift = 0;
                     next_state = IDLE;

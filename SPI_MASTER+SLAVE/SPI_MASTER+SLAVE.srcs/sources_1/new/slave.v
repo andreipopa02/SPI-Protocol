@@ -12,7 +12,7 @@ module slave(
       output [7:0]data_out       //used for debug
     );
     
-    wire [2:0] out_cnt; //output from counter
+    wire [3:0] out_cnt; //output from counter
     wire enable_cnt;
     wire enable_shift;
     

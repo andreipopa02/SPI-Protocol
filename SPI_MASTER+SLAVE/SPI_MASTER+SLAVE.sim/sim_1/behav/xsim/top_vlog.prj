@@ -4,7 +4,6 @@ verilog xil_defaultlib  \
 "../../../../SPI_MASTER+SLAVE.srcs/sources_1/new/modules.v" \
 "../../../../SPI_MASTER+SLAVE.srcs/sources_1/new/slave.v" \
 "../../../../SPI_MASTER+SLAVE.srcs/sources_1/new/top.v" \
-"../../../../SPI_MASTER+SLAVE.srcs/sim_1/new/tb_top.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

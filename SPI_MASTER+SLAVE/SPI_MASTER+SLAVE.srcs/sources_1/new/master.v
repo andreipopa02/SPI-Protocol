@@ -19,14 +19,14 @@ module master(
 );
    
     
-    wire [2:0] out_cnt; //output from counter
+    wire [3:0] out_cnt; //output from counter
     
     wire enable_cnt;
     wire enable_shift;
 
-   freq_divider_MUX freq_inst(
+   freq_divider freq_inst(
     .clk(clk),                //input
-    .select(select),         //input
+    //.select(select),         //input
     .sclk(sclk)              //output
    );
    
